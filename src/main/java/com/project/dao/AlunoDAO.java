@@ -125,6 +125,22 @@ public class AlunoDAO {
         return alunos;
     }
     
-    
+    public void atualizarAluno(Aluno aluno) throws SQLException {
+        String sql = "UPDATE alunos SET nome = ?, data_nascimento = ?, email = ?, telefone = ?, plano = ? WHERE cpf = ?";
+        try (Connection con = new ConnectionFactory().getConnection();
+             PreparedStatement stmt = con.prepareStatement(sql)) {
+
+            stmt.setString(1, aluno.getNome());
+            stmt.setString(2, aluno.getNascimento());
+            stmt.setString(3, aluno.getEmail());
+            stmt.setString(4, aluno.getTelefone());
+            stmt.setString(5, aluno.getPlano());
+            stmt.setString(6, aluno.getCpf());
+
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new SQLException("Erro ao atualizar aluno: " + e.getMessage());
+        }
+    }
     
 }

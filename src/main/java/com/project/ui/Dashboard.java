@@ -6,6 +6,9 @@ package com.project.ui;
 
 
 import com.project.dao.AlunoDAO;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 import java.sql.SQLException;
@@ -112,6 +115,12 @@ public class Dashboard extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
 
@@ -176,15 +185,16 @@ public class Dashboard extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton4)
-                        .addGap(12, 12, 12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton3))
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -203,7 +213,7 @@ public class Dashboard extends javax.swing.JFrame {
         );
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel7.setText("Buscar por Aluno");
+        jLabel7.setText("Gerenciar Aluno");
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -410,14 +420,79 @@ public class Dashboard extends javax.swing.JFrame {
         );
 
         jMenu1.setText("Novo");
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
 
         jMenuItem1.setText("Aluno");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Ajuda");
+        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu2ActionPerformed(evt);
+            }
+        });
+
+        jMenuItem8.setText("Como adicionar um aluno?");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem8);
+
+        jMenuItem5.setText("Como buscar por um aluno?");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem5);
+
+        jMenuItem6.setText("Como deletar um aluno?");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem6);
+
         jMenuBar1.add(jMenu2);
+
+        jMenu4.setText("Sobre o programa");
+        jMenu4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu4ActionPerformed(evt);
+            }
+        });
+
+        jMenuItem4.setText("Sobre");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem4);
+
+        jMenuItem3.setText("Desenvolvedores");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem3);
+
+        jMenuBar1.add(jMenu4);
 
         jMenu3.setText("Sair");
         jMenu3.addActionListener(new java.awt.event.ActionListener() {
@@ -427,6 +502,11 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         jMenuItem2.setText("Sair do Programa");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem2);
 
         jMenuBar1.add(jMenu3);
@@ -605,6 +685,88 @@ public class Dashboard extends javax.swing.JFrame {
         verificar_selecao();
     }//GEN-LAST:event_jTable1MouseClicked
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
+        // TODO add your handling code here:
+       
+        
+    }//GEN-LAST:event_jMenu4ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        Sobre sobre = new Sobre(this);
+        sobre.setVisible(true);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        Curriculo cur = new Curriculo(this);
+        cur.setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu2ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        Color lightGray = new Color(211, 211, 211);
+        String mensagem = "<html>No painel <b>Gerenciar Aluno</b>, digite o cpf e clique em <b>buscar</b>!</html>";
+        String titulo = "Como buscar um aluno?";
+        JOptionPane.showMessageDialog(null, mensagem, titulo, JOptionPane.INFORMATION_MESSAGE);
+
+        mudarCorTemporariamente(jTextField5, lightGray, 1000);
+        mudarCorTempButton(jButton2, Color.DARK_GRAY, 1000);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        Color lightGray = new Color(211, 211, 211);
+        String mensagem = "<html>No painel <b>Gerenciar Aluno</b>, digite o cpf e clique em <b>Deletar Aluno</b>!</html>";
+        String titulo = "Como deletar um aluno?";
+        JOptionPane.showMessageDialog(null, mensagem, titulo, JOptionPane.INFORMATION_MESSAGE);
+
+        mudarCorTemporariamente(jTextField5, lightGray, 1000);
+        mudarCorTempButton(jButton3, Color.DARK_GRAY, 1000);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+        Color lightGray = new Color(211, 211, 211);
+        String mensagem = "<html>No painel <b>Gerenciar Aluno</b>, digite as informações e clique em <b>cadastrar</b>!</html>";
+        String titulo = "Como cadastrar um novo aluno?";
+        JOptionPane.showMessageDialog(null, mensagem, titulo, JOptionPane.INFORMATION_MESSAGE);
+
+        mudarCorTemporariamente(jTextField1, lightGray, 1000);
+        mudarCorTemporariamente(jTextField2, lightGray, 1000);
+        mudarCorTemporariamente(jTextField3, lightGray, 1000);
+        mudarCorTemporariamente(jTextField4, lightGray, 1000);
+        mudarCorTempButton(jButton1, Color.DARK_GRAY, 1000);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+        // TODO add your handling code here
+        
+    }//GEN-LAST:event_jMenu1ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        Color lightGray = new Color(211, 211, 211);
+        String mensagem = "<html>No painel <b>Gerenciar Aluno</b>, digite as informações e clique em <b>cadastrar</b>!</html>";
+        String titulo = "Como cadastrar um novo aluno?";
+        JOptionPane.showMessageDialog(null, mensagem, titulo, JOptionPane.INFORMATION_MESSAGE);
+
+        mudarCorTemporariamente(jTextField1, lightGray, 1000);
+        mudarCorTemporariamente(jTextField2, lightGray, 1000);
+        mudarCorTemporariamente(jTextField3, lightGray, 1000);
+        mudarCorTemporariamente(jTextField4, lightGray, 1000);
+        mudarCorTempButton(jButton1, Color.DARK_GRAY, 1000);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     private void limparCampos() {
         jTextField1.setText("");
         jTextField2.setText("");
@@ -647,7 +809,38 @@ public class Dashboard extends javax.swing.JFrame {
         }
     }
 
+    private void mudarCorTemporariamente(JTextField textField, Color cor, int duracao) {
+        Color corOriginal = textField.getBackground();
+        textField.setBackground(cor);
 
+        // Timer para restaurar a cor original após a duração especificada
+        Timer timer = new Timer(duracao, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textField.setBackground(corOriginal);
+            }
+        });
+        timer.setRepeats(false); // Executa apenas uma vez
+        timer.start();
+    }
+    
+    private static void mudarCorTempButton(JButton button, Color cor, int duracao) {
+        Color corOriginal = button.getBackground();
+        button.setBackground(cor);
+
+        // Timer para restaurar a cor original após a duração especificada
+        Timer timer = new Timer(duracao, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                button.setBackground(corOriginal);
+            }
+        });
+        timer.setRepeats(false); // Executa apenas uma vez
+        timer.start();
+    }
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -713,9 +906,15 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
