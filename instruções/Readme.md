@@ -47,6 +47,8 @@ Além disso, caso você tenha mudado a senha padrão, assim como eu, você terá
 
 
 Para criar o banco de dados você pode fazer a importação usando o arquivo `backup-bd_usuario.sql` que está na raiz do projeto. (AQUI NO GITHUB)
+Baixe esse arquivo: https://github.com/lu1pinho/Academia/blob/main/modelobancodedados/export-bd_usuario.sql
+
 Separei um vídeo para te ajudar a importar o banco de dados, caso tenha dificuldades:
 <br>
 [Como importar um banco de dados?](https://youtu.be/RkLB0aQh5Es?si=IReV2yNXbCEExd4r&t=355)
