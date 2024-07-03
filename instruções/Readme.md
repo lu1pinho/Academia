@@ -46,7 +46,7 @@ public class ConnectionFactory {
 Além disso, caso você tenha mudado a senha padrão, assim como eu, você terá de alterar a senha no mesmo arquivo.
 
 
-Para criar o banco de dados você pode fazer a importação usando o arquivo `backup-bd_usuario.sql` que está na raiz do projeto.
+Para criar o banco de dados você pode fazer a importação usando o arquivo `backup-bd_usuario.sql` que está na raiz do projeto. (AQUI NO GITHUB)
 Separei um vídeo para te ajudar a importar o banco de dados, caso tenha dificuldades:
 <br>
 [Como importar um banco de dados?](https://youtu.be/RkLB0aQh5Es?si=IReV2yNXbCEExd4r&t=355)
